@@ -1,0 +1,16 @@
+<h1 class="text-center m-3">Peliculas</h1>
+<div class="d-flex flex-column" style="place-items: center">
+{{#each result}}
+    <div class=" d-flex m-1 p-2 justify-content-center w-50 bg-light border border-5 rounded" style="place-items: center">
+        <div class="d-flex flex-column mx-4 w-75">
+            <h5>Id: {{id}}</h5>
+            <h2>Peli: {{title}}</h2>
+            <h4>Precio: ${{price}}</h4>
+        </div>
+        <div class="w-50 bg-light d-flex" style="place-content: center">
+            <img src={{thumbail}} alt={{title}} style="max-width: 13em; max-height: 13em; object-fit: contain">
+        </div>
+    </div>
+{{/each}}
+<button><a href="../">Volver a carga de Productos</a></button>
+</div>
