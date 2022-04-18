@@ -33,7 +33,7 @@ api.post('/api/productos', (req, res) => {
 })
 
 
-    api.put('/api/productos/:id', (req, res) => {
+api.put('/api/productos/:id', (req, res) => {
         productos.modifyById(req.body, req.params.id)
         res.send({ obj: 'Se modifico correctamente el producto' })
 })

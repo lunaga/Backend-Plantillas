@@ -101,15 +101,17 @@ module.exports = class Contenedor {
             }
         }
 
-        this.modifyById = async function (values, id) {
+        this.modifyById = async function (values) {
             try {
                 const tempFile = await fs.promises.readFile(archivo, 'utf-8')
+                values.id = Number(values.id)
                 let parseFile = JSON.parse(tempFile)
-                let found = parseFile.find(n => n.id === Number(id))
+                let found = parseFile.find(n => n.id === values.id)
                 if (found) {
                     found.title = values.title
                     found.price = Number(values.price)
                     found.thumbnail = values.thumbail
+                    console.log(parseFile)
                     fs.writeFileSync(archivo, JSON.stringify(parseFile, null, 2))
                 } else { console.log('No se encuentra el producto que desea modificar') }
             }

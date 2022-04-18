@@ -1,6 +1,6 @@
 const express = require ('express')
 const app= express()
-const api = require('./routes/apiproductos')
+const api = require('./routes/api')
 app.use(api)
 app.use(express.static('public'))
 app.use(express.json())
